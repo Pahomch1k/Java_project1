@@ -1,16 +1,18 @@
 package step.learning;
+import java.io.IOException;
 
-import step.learning.basics.Dz_1_Files;
-import step.learning.basics.FilesDemo;
+import step.learning.DZ.Dz_2_Files.Dz2;
 
 /**
  * Hello world!
  *
  */
-public class App 
-{
-    public static void main( String[] args)
-    {
-        new FilesDemo().run();
+public class App {
+    public static void main(String[] args) {
+        try {
+            new Dz2().run();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

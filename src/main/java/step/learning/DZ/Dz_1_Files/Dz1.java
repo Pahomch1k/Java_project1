@@ -1,12 +1,12 @@
-package step.learning.basics;
+package step.learning.DZ.Dz_1_Files;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 
-public class Dz_1_Files {
+public class Dz1 {
 
     public static void main() {
-        File currentDirectory = new File(".");  // "." вказує на поточний каталог
+        File currentDirectory = new File(".");
         displayContents(currentDirectory);
     }
 

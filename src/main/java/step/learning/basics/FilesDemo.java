@@ -1,6 +1,9 @@
 package step.learning.basics;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.Random;
+import java.util.Scanner;
 
 public class FilesDemo {
     public void run(){
@@ -22,6 +25,37 @@ public class FilesDemo {
         catch(IOException ex){
             System.err.println(ex.getMessage());
         }
+
+        System.out.println("____________________________________________");
+        ByteArrayOutputStream byteBuilder = new ByteArrayOutputStream(4096);
+        byte[] buf = new byte[512];
+        try (InputStream reader = new BufferedInputStream(new FileInputStream((filename)))) {
+            int cnt;
+            while ((cnt = reader.read(buf)) > 0) {
+                byteBuilder.write(buf , 0 , cnt);
+            }
+            String content = new String(byteBuilder.toByteArray(), StandardCharsets.UTF_16) ;
+            System.out.println(content);
+        }
+        catch(IOException ex){
+            System.err.println(ex.getMessage());
+        }
+
+        try( InputStream reader = new FileInputStream(filename);
+             Scanner scanner = new Scanner(reader)) {
+            while (scanner.hasNext()){
+                System.out.println(scanner.next());
+            }
+        }
+        catch(IOException ex){
+            System.err.println(ex.getMessage());
+        }
+
+        Random random = new Random();
+
+        System.out.println("Your name: paha");
+        System.out.println("Hellow paha\n");
+
     }
     public void run2(){
         File dir = new File("./uploads");
