@@ -1,13 +1,16 @@
 package step.learning;
 
+import step.learning.basics.Dz_1_Files;
+import step.learning.basics.FilesDemo;
+
 /**
  * Hello world!
  *
  */
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args)
     {
-        System.out.println( "Hello World!" );
+        new FilesDemo().run();
     }
 }
