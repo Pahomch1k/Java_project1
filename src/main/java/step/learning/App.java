@@ -1,15 +1,14 @@
 package step.learning;
-import java.io.IOException;
 
-import step.learning.DZ.Dz_2_Files.Dz2;
-import step.learning.OOP.OopDemo;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import step.learning.ioc.ConfigModule;
+import step.learning.ioc.IocDemo;
 
-/**
- * Hello world!
- *
- */
 public class App {
     public static void main(String[] args) {
-            new OopDemo().run();
+        Injector injector = Guice.createInjector(new ConfigModule());
+        IocDemo iocDemo = injector.getInstance(IocDemo.class);
+        iocDemo.run();
     }
 }
